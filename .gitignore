@@ -36,6 +36,9 @@ historico.json
 landing/node_modules/
 landing/qr-code-*.png
 
+# Lock files (keep requirements-lock.txt for deploy)
+# requirements-lock.txt stays tracked
+
 # OS files
 .DS_Store
 Thumbs.db
