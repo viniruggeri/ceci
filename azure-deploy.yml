@@ -1,5 +1,0 @@
-# Azure Web App deployment configuration
-# Deploy usando: az webapp up --runtime PYTHON:3.12 --sku B1
-
-runtime: python|3.12
-startup_command: uvicorn app:app --host 0.0.0.0 --port 8000 --workers 1
