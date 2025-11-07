@@ -13,6 +13,9 @@
     />
     <title>Ceci - Agente IA do Metrô SP | Projeto Acessi</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -102,6 +105,21 @@
         position: relative;
       }
 
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 600px;
+        height: 80%;
+        background: url("Ceci_S_BG.png") center/contain no-repeat;
+        opacity: 0.08;
+        z-index: -1;
+        filter: blur(1px);
+      }
+
       .hero h1 {
         font-size: clamp(2.5rem, 8vw, 5rem);
         font-weight: 900;
@@ -111,6 +129,28 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
         animation: fadeInUp 1s ease-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-logo {
+        width: clamp(60px, 10vw, 100px);
+        height: clamp(60px, 10vw, 100px);
+        object-fit: contain;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
       }
 
       .hero .tagline {
@@ -408,7 +448,7 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-        <h1>🚇 Ceci</h1>
+        <h1><img src="logo.png" alt="Ceci Logo" class="hero-logo" />Ceci</h1>
         <p class="tagline">
           Primeiro Agente de IA para Transporte Público do Brasil
         </p>
