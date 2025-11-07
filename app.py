@@ -305,4 +305,4 @@ async def list_reports(authorization: str = Header(None)):
 if __name__ == "__main__":
     import uvicorn
     print("Starting uvicorn on 0.0.0.0:5000")
-    uvicorn.run("app:app", host="0.0.0.0", port=5000, reload=True)
+    uvicorn.run("app:app", host="0.0.0.0", port=5000, reload=False)
