@@ -440,6 +440,21 @@
         opacity: 1;
         transform: translateY(0);
       }
+
+      /* Visit Counter */
+      .visit-counter {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        background: rgba(0, 102, 255, 0.1);
+        border-radius: 10px;
+        display: inline-block;
+      }
+
+      .visit-counter span {
+        color: var(--secondary);
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
     </style>
   </head>
   <body>
@@ -668,10 +683,40 @@
           |
           <a href="support.acessi@acessi.com.br">Contato</a>
         </p>
+        <p id="counter" class="visit-counter">
+          Visitantes hoje: <span id="counter-value">0</span>
+        </p>
       </div>
     </footer>
 
     <script>
+      // Visit Counter
+      (function() {
+        const COUNTER_KEY = 'ceci_visit_count';
+        
+        // Get current count from localStorage
+        let visitCount = localStorage.getItem(COUNTER_KEY);
+        
+        // If no count exists, initialize to 0
+        if (visitCount === null) {
+          visitCount = 0;
+        } else {
+          visitCount = parseInt(visitCount, 10);
+        }
+        
+        // Increment the count
+        visitCount++;
+        
+        // Save the updated count back to localStorage
+        localStorage.setItem(COUNTER_KEY, visitCount.toString());
+        
+        // Display the count in the page
+        const counterElement = document.getElementById('counter-value');
+        if (counterElement) {
+          counterElement.textContent = visitCount;
+        }
+      })();
+
       // Scroll animations
       const observerOptions = {
         threshold: 0.1,
